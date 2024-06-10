@@ -6,7 +6,7 @@ import { TasksService } from 'src/services/tasks.service';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { tasksReducer } from './tasks-store/reducers/tasks.reducer';
-import { TasksEffects } from './tasks-store/effects/tasks-page.effects';
+import { TasksEffects } from './tasks-store/effects/tasks.effects';
 import { TASKS_STATE_NAME } from './tasks-store/selectors/tasks.selector';
 
 

@@ -1,6 +1,6 @@
 import { TTaskPageState } from "../tasks.state";
 
-export const initTaskPageState: TTaskPageState = {
+export const resetInitTaskPageState: TTaskPageState = {
     TasksList: [],
     isOpenModal: false
 }

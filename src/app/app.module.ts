@@ -13,7 +13,7 @@ import { EffectsModule } from '@ngrx/effects';
         BrowserModule,
         AppRoutingModule,
         StoreModule.forRoot({}),
-        EffectsModule.forRoot({})
+        EffectsModule.forRoot({}),
     ],
     bootstrap: [AppComponent]
 })
