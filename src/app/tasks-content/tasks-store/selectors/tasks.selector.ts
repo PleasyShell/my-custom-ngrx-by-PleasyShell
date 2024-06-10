@@ -2,7 +2,7 @@ import { createFeatureSelector, createSelector } from "@ngrx/store";
 import { TTaskPageState } from "../state/tasks.state";
 
 
-export const TASKS_STATE_NAME = 'tasks';
+export const TASKS_STATE_NAME = 'TasksPage';
 const selectTasksState = createFeatureSelector<TTaskPageState>(TASKS_STATE_NAME);
 
 
