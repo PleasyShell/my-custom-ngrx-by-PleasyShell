@@ -1,10 +1,5 @@
 import { Component } from "@angular/core";
-import { Store } from "@ngrx/store";
 import { Observable } from "rxjs";
-import {
-    TTaskState, selectModalState,
-    closeTasksModal
-} from "../../tasks-store";
 import { TasksService } from "src/services/tasks.service";
 
 @Component({
