@@ -16,6 +16,7 @@ export class TitleInputComponent {
     protected onKeyUp(event: KeyboardEvent) {
 
         const input = event.target as HTMLInputElement;
+        
         this.valueChange.emit(input.value);
     };
 

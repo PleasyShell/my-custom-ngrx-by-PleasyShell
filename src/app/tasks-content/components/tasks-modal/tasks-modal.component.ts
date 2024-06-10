@@ -21,7 +21,6 @@ export class TasksModalComponent {
     protected titleOfNameStatus: TTitleInput;
 
 
-
     protected modalState(): Observable<boolean> {
 
         return this.tasksService.getModalState();

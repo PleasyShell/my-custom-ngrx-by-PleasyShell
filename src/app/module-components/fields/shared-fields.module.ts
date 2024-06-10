@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { TitleInputComponent } from './title-input/title-input.component';
 
 
-
 @NgModule({
     declarations: [
         TitleInputComponent
@@ -15,4 +14,5 @@ import { TitleInputComponent } from './title-input/title-input.component';
         TitleInputComponent
     ]
 })
+
 export class SharedFieldsModule { }
