@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Store } from "@ngrx/store";
 import { Observable } from "rxjs";
+import { TTitleInput } from "src/app/module-components/fields";
 import {
     TTaskState, loadTasks, selectTasks,
     TTaskList, openTasksModal, closeTasksModal,
@@ -17,13 +18,21 @@ export class TasksService {
         private store: Store<TTaskState>
     ) {
         this.store.dispatch(loadTasks());
+
         this.tasks$ = this.store.select(selectTasks);
-        this.isModalOpen$ = this.store.select(selectModalState)
+        this.isModalOpen$ = this.store.select(selectModalState);
     };
 
 
     private tasks$: Observable<TTaskList[]>;
     private isModalOpen$: Observable<boolean>;
+
+
+    public titleOfNameStatusInit: TTitleInput = {
+
+        placeholder: 'Статус',
+        value: ''
+    }
 
 
     public getTasksList(): Observable<TTaskList[]> {

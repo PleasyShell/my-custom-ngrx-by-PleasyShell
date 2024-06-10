@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { Observable } from "rxjs";
-import { TasksService } from "src/services/tasks.service";
+import { TTitleInput } from "src/app/module-components/fields";
+import { TasksService } from "src/services/tasks/tasks.service";
 
 @Component({
     selector: 'tasks-modal',
@@ -10,8 +11,15 @@ export class TasksModalComponent {
 
 
     constructor(
-        private tasksService: TasksService
-    ) { }
+        public tasksService: TasksService
+    ) {
+
+        this.titleOfNameStatus = tasksService.titleOfNameStatusInit; 
+    };
+
+
+    protected titleOfNameStatus: TTitleInput;
+
 
 
     protected modalState(): Observable<boolean> {

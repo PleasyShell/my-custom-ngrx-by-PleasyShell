@@ -5,7 +5,9 @@
             <button (click)="closeModal()">Закрыть окошко</button>
         </div>
         <div class="modal-body">
-            <input>
+            <!-- ///затычка тест -->
+            <title-input [inputTitleData]="tasksService.titleOfNameStatusInit"></title-input>
+            <!-- /// -->
             <div class="modal-footer fix-footer">
                 <button>Сохранить</button>
             </div>

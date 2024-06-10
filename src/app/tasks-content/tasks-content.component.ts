@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { Observable } from "rxjs";
-import { TasksService } from "src/services/tasks.service";
+import { TasksService } from "src/services/tasks/tasks.service";
 import { TTaskList } from "./tasks-store";
 
 
