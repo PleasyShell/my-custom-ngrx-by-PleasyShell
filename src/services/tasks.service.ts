@@ -1,9 +1,11 @@
-import { Injectable } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
-import { loadTasks, openTasksModal } from 'src/app/tasks-content/tasks-store/actions/tasks.actions';
-import { selectTasks } from 'src/app/tasks-content/tasks-store/selectors/tasks.selector';
-import { TTaskList, TTaskState } from 'src/app/tasks-content/tasks-store/state/tasks.state';
+import { Injectable } from "@angular/core";
+import { Store } from "@ngrx/store";
+import { Observable } from "rxjs";
+import {
+    TTaskState, loadTasks, selectTasks,
+    TTaskList, openTasksModal
+} from "src/app/tasks-content/tasks-store";
+
 
 @Injectable()
 

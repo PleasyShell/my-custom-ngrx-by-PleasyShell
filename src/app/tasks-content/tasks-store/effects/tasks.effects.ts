@@ -25,12 +25,5 @@ export class TasksEffects {
                     map(tasks => loadTasksSuccess({ tasks }))
                 ))
         ));
-
-    // protected openTasksModal$ = createEffect(() =>
-    //     this.actions$.pipe(
-    //         ofType(openTasksModal),
-    //         mergeMap(() => 
-    //         this.tasksService.g)
-    //     )
-    // )
+        
 };
