@@ -1,4 +1,4 @@
-<div class="modal-background" *ngIf="isModalOpen$ | async">
+<div class="modal-background" *ngIf="modalState() | async">
     <div class="modal-window modal-add-task">
         <div class="modal-header">
             <p class="modal-headertext-style">Тест модального окна</p>

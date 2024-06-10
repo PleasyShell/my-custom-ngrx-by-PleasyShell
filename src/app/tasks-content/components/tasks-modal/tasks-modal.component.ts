@@ -5,6 +5,7 @@ import {
     TTaskState, selectModalState,
     closeTasksModal
 } from "../../tasks-store";
+import { TasksService } from "src/services/tasks.service";
 
 @Component({
     selector: 'tasks-modal',
@@ -14,18 +15,19 @@ export class TasksModalComponent {
 
 
     constructor(
-        private store: Store<TTaskState>
-    ) {
-        this.isModalOpen$ = this.store.select(selectModalState);
+        private tasksService: TasksService
+    ) { }
+
+
+    protected modalState(): Observable<boolean> {
+
+        return this.tasksService.getModalState();
     };
-
-
-    protected isModalOpen$: Observable<boolean>;
 
 
     protected closeModal() {
 
-        this.store.dispatch(closeTasksModal());
+        this.tasksService.closeTaskModal();
     };
 
 };

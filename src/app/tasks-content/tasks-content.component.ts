@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
-import { Store } from "@ngrx/store";
+import { Observable } from "rxjs";
 import { TasksService } from "src/services/tasks.service";
-import { TTaskState, loadTasks } from "./tasks-store";
+import { TTaskList } from "./tasks-store";
 
 
 @Component({
@@ -17,7 +17,7 @@ export class TasksContentComponent {
     ) { }
 
 
-    protected getTasksListContent() {
+    protected getTasksListContent(): Observable<TTaskList[]> {
 
         return this.tasksService.getTasksList();
     };
