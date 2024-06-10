@@ -1,0 +1,14 @@
+<div class="modal-background" *ngIf="isModalOpen$ | async">
+    <div class="modal-window modal-add-task">
+        <div class="modal-header">
+            <p class="modal-headertext-style">Тест модального окна</p>
+            <button (click)="closeModal()">Закрыть окошко</button>
+        </div>
+        <div class="modal-body">
+            <input>
+            <div class="modal-footer fix-footer">
+                <button>Сохранить</button>
+            </div>
+        </div>
+    </div>
+</div>

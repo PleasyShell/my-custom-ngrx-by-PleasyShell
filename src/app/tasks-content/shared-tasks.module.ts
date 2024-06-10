@@ -1,18 +1,23 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { TasksContentComponent } from './tasks-content.component';
-import { TasksRoutingModule } from './tasks-routing.module';
-import { TasksService } from 'src/services/tasks.service';
-import { EffectsModule } from '@ngrx/effects';
-import { StoreModule } from '@ngrx/store';
-import { tasksReducer } from './tasks-store/reducers/tasks.reducer';
-import { TasksEffects } from './tasks-store/effects/tasks.effects';
-import { TASKS_STATE_NAME } from './tasks-store/selectors/tasks.selector';
+import { NgModule } from "@angular/core";
+import {
+    TasksContentComponent, TasksModalComponent,
+    TasksRoutingModule
+} from ".";
+import { CommonModule } from "@angular/common";
+import { EffectsModule } from "@ngrx/effects";
+import { StoreModule } from "@ngrx/store";
+import { ApiService } from "src/services/api.service";
+import { TasksService } from "src/services/tasks.service";
+import {
+    TASKS_STATE_NAME, tasksReducer,
+    TasksEffects
+} from "./tasks-store";
 
 
 @NgModule({
     declarations: [
-        TasksContentComponent
+        TasksContentComponent,
+        TasksModalComponent
     ],
     imports: [
         CommonModule,
@@ -20,6 +25,7 @@ import { TASKS_STATE_NAME } from './tasks-store/selectors/tasks.selector';
         StoreModule.forFeature(TASKS_STATE_NAME, tasksReducer),
         EffectsModule.forFeature([TasksEffects]),
     ],
-    providers: [TasksService]
+    providers: [TasksService, ApiService]
 })
+
 export class SharedTasksModule { }

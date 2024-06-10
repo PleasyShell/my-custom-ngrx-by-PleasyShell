@@ -1,22 +1,6 @@
+<tasks-modal></tasks-modal>
 <h2>Задачи с NGRX</h2>
-<div *ngFor="let task of tasks$ | async">
+<div *ngFor="let task of getTasksListContent() | async">
     <li>{{task | json}}</li>
 </div>
 <button style="background: aqua;" (click)="openModal()">Модальное окно</button>
-
-<div class="modal-background" *ngIf="isModalOpen$ |async">
-    <div class="modal-window modal-add-task">
-        <div class="modal-header">
-            <p class="modal-headertext-style">Тест модального окна</p>
-            <button>Закрыть окошко</button>
-        </div>
-        <div class="modal-body">
-            <div class="add-task-block" *ngFor="let task of tasks$ | async">
-                <li>{{task | json}}</li>
-            </div>
-            <div class="modal-footer fix-footer">
-                <button>Сохранить</button>
-            </div>
-        </div>
-    </div>
-</div>

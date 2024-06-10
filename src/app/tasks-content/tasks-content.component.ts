@@ -1,9 +1,8 @@
-import { Component } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
-import { selectTasks, selectModalState } from './tasks-store/selectors/tasks.selector';
-import { TTaskState, TTaskList } from './tasks-store/state/tasks.state';
-import { loadTasks, openTasksModal } from './tasks-store/actions/tasks.actions';
+import { Component } from "@angular/core";
+import { Store } from "@ngrx/store";
+import { TasksService } from "src/services/tasks.service";
+import { TTaskState, loadTasks } from "./tasks-store";
+
 
 @Component({
     selector: 'tasks-content',
@@ -14,26 +13,19 @@ export class TasksContentComponent {
 
 
     constructor(
-        private store: Store<TTaskState>
-    ) {
-        this.tasks$ = this.store.select(selectTasks);
-        this.isModalOpen$ = this.store.select(selectModalState);
-    };
+        private tasksService: TasksService
+    ) { }
 
 
-    protected isModalOpen$: Observable<boolean>;
-    protected tasks$: Observable<TTaskList[]>
+    protected getTasksListContent() {
 
-
-    ngOnInit() {
-
-        this.store.dispatch(loadTasks());
+        return this.tasksService.getTasksList();
     };
 
 
     protected openModal() {
 
-        this.store.dispatch(openTasksModal());
+        this.tasksService.openTaskModal();
     };
 
 };
