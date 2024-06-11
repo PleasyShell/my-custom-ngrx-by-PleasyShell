@@ -12,11 +12,13 @@ export class ApiService {
         return of([
             {
                 Id: 1,
-                Name: 'aboba'
+                Name: 'aboba',
+                Surname: 'dadsaas'
             },
             {
                 Id: 2,
-                Name: 'aaaaaaa'
+                Name: 'aaaaaaa',
+                Surname: 'tko3ko4'
             }
         ])
     };

@@ -3,11 +3,8 @@ import { Store } from "@ngrx/store";
 import { Observable } from "rxjs";
 import {
     TAddTask, selectModalState,
-    openTasksModal, closeTasksModal,
-    selectName,
-    selectSurname,
-    TAddTaskContent,
-    openEditTasksModal
+    openTasksModal, closeTasksModal, selectName,
+    selectSurname, TAddTaskContent, openEditTasksModal
 } from "src/app/tasks-content/components/tasks-modal/tasks-modal-store";
 
 @Injectable()

@@ -29,7 +29,7 @@ export class TasksContentComponent {
     protected openModal(item?: TAddTaskContent) {
 
 
-        ///тест того, что если бы мы редактировали данные имеющиеся
+        ///тест того, что если бы мы редактировали данные
         const fakeItem: TAddTaskContent = {
             Id: 1,
             Name: 'Test',

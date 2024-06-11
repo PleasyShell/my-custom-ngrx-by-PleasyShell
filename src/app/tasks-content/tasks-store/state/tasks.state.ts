@@ -8,5 +8,6 @@ export type TTaskPageState = {
 
 export type TTaskList = {
     Id: number,
-    Name: string
+    Name: string,
+    Surname: string
 }
