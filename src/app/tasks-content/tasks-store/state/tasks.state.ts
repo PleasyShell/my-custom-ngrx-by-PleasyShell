@@ -3,8 +3,7 @@ export type TTaskState = {
 }
 
 export type TTaskPageState = {
-    TasksList: TTaskList[],
-    isOpenModal: boolean
+    TasksList: TTaskList[]
 }
 
 export type TTaskList = {

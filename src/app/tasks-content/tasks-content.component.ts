@@ -3,6 +3,7 @@ import { Observable } from "rxjs";
 import { TasksService } from "src/services/tasks/tasks.service";
 import { TTaskList } from "./tasks-store";
 import { TasksModalService } from "src/services/tasks/tasks-modal.service";
+import { TAddTaskContent } from "./components/tasks-modal/tasks-modal-store";
 
 
 @Component({
@@ -25,9 +26,17 @@ export class TasksContentComponent {
     };
 
 
-    protected openModal() {
+    protected openModal(item?: TAddTaskContent) {
 
-        this.modal.openTaskModal();
+
+        ///тест того, что если бы мы редактировали данные имеющиеся
+        const fakeItem: TAddTaskContent = {
+            Id: 1,
+            Name: 'Test',
+            Surname: 'Test Me pls'
+        }
+
+        this.modal.openTaskModal(fakeItem);
     };
 
 };

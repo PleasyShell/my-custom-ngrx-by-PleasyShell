@@ -1,7 +1,11 @@
 import { Action, createReducer, on } from "@ngrx/store";
 import { resetInitAddTaskModalState } from "../state/resets/tasks-modal.reset-state";
-import { closeTasksModal, openTasksModal, updateFieldName, updateFieldSurname } from "../actions/tasks-modal.actions";
+import {
+    closeTasksModal, openEditTasksModal, openTasksModal,
+    updateFieldName, updateFieldSurname
+} from "../actions/tasks-modal.actions";
 import { TAddTask } from "../state/tasks-modal.state";
+
 
 const _modalAddTaskReducer = createReducer(
     resetInitAddTaskModalState,
@@ -10,6 +14,12 @@ const _modalAddTaskReducer = createReducer(
 
         ...state,
         isOpen: true
+    })),
+    on(openEditTasksModal, (state, { content }) => ({
+
+        ...state,
+        isOpen: true,
+        Content: content
     })),
     on(closeTasksModal, (state) => ({
 

@@ -5,7 +5,9 @@ import {
     TAddTask, selectModalState,
     openTasksModal, closeTasksModal,
     selectName,
-    selectSurname
+    selectSurname,
+    TAddTaskContent,
+    openEditTasksModal
 } from "src/app/tasks-content/components/tasks-modal/tasks-modal-store";
 
 @Injectable()
@@ -35,9 +37,14 @@ export class TasksModalService {
     };
 
 
-    public openTaskModal(item?: any) {
+    public openTaskModal(item?: TAddTaskContent) {
 
-        this.store.dispatch(openTasksModal());
+        if (!item) {
+            this.store.dispatch(openTasksModal());
+            return;
+        };
+
+        this.store.dispatch(openEditTasksModal({ content: item }));
     };
 
     public closeTaskModal() {

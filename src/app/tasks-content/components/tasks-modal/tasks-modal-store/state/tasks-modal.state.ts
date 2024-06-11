@@ -8,7 +8,7 @@ export type TAddTask = {
 }
 
 export type TAddTaskContent = {
-    Id: 0,
+    Id: number,
     Name: string,
     Surname: string
 }
