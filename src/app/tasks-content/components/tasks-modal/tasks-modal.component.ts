@@ -2,7 +2,7 @@ import { Component } from "@angular/core";
 import { Store } from "@ngrx/store";
 import { Observable } from "rxjs";
 import { TasksModalService } from "src/services/tasks/tasks-modal.service";
-import { updateFieldName, updateFieldSurname } from "./tasks-modal-store";
+import { TAddTask, updateFieldName, updateFieldSurname } from "./tasks-modal-store";
 
 
 @Component({
@@ -14,9 +14,8 @@ export class TasksModalComponent {
 
 
     constructor(
-        //--public временно
-        public modal: TasksModalService,
-        private store: Store
+        private modal: TasksModalService,
+        private store: Store<TAddTask>
     ) {
         this.titleOfName = modal.titleOfNameInit$;
         this.titleOfSurname = modal.titleOfSurnameInit$;
@@ -26,9 +25,15 @@ export class TasksModalComponent {
     protected titleOfName: Observable<string>;
     protected titleOfSurname: Observable<string>;
 
+
     protected modalState(): Observable<boolean> {
 
         return this.modal.getModalState();
+    };
+
+    protected modalMode(): boolean {
+
+        return this.modal.getModalMode();
     };
 
 

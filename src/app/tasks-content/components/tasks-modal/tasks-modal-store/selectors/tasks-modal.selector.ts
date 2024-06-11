@@ -12,6 +12,12 @@ export const selectModalState = createSelector(
     (state: TAddTask) => state.isOpen
 );
 
+export const selectModalDataId = createSelector(
+
+    selectTasksState,
+    (state: TAddTask) => state.Content.Id
+)
+
 export const selectName = createSelector(
     selectTasksState,
     (state: TAddTask) => state.Content.Name

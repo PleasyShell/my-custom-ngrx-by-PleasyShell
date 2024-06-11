@@ -1,7 +1,7 @@
 <div class="modal-background" *ngIf="modalState() | async">
     <div class="modal-window modal-add-task">
         <div class="modal-header">
-            <p class="modal-headertext-style">Тест модального окна</p>
+            <p class="modal-headertext-style">{{modalMode() ? 'Редактировать задачу': 'Добавить задачу'}}</p>
             <button (click)="closeModal()">Закрыть окошко</button>
         </div>
         <div class="modal-body">
