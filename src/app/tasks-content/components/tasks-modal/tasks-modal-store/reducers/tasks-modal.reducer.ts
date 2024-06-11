@@ -24,7 +24,13 @@ const _modalAddTaskReducer = createReducer(
     on(closeTasksModal, (state) => ({
 
         ...state,
-        isOpen: false
+        isOpen: false,
+        Content: {
+            ...state.Content,
+            Id: 0,
+            Name: '',
+            Surname: ''
+        }
     })),
 
     on(updateFieldName, (state, { name }) => ({
