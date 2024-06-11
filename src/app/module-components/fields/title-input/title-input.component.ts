@@ -1,5 +1,8 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { TTitleInput } from './type';
+import {
+    Component, EventEmitter,
+    Input, Output
+} from '@angular/core';
+
 
 @Component({
     selector: 'title-input',
@@ -17,7 +20,7 @@ export class TitleInputComponent {
     protected onKeyUp(event: KeyboardEvent) {
 
         const input = event.target as HTMLInputElement;
-        
+
         this.valueChange.emit(input.value);
         this.value = input.value;
     };

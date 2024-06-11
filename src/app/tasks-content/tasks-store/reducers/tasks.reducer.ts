@@ -11,8 +11,7 @@ const _tasksReducer = createReducer(
     on(loadTasksSuccess, (state, { tasks }) => ({
 
         ...state,
-        TasksList: tasks,
-        isOpenModal: false
+        TasksList: tasks
     })),
 
 );
