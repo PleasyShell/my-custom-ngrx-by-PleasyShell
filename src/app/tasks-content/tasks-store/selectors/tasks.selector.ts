@@ -11,9 +11,3 @@ export const selectTasks = createSelector(
     selectTasksState,
     (state: TTaskPageState) => state.TasksList
 );
-
-export const selectModalState = createSelector(
-
-    selectTasksState,
-    (state: TTaskPageState) => state.isOpenModal
-);

@@ -14,20 +14,20 @@ import {
 } from "./tasks-store";
 import { SharedFieldsModule } from "../module-components/fields";
 import { FormsModule } from "@angular/forms";
+import { SharedTasksComponentsModule } from "./components/shared-tasks-components.module";
 
 
 @NgModule({
     declarations: [
         TasksContentComponent,
-        TasksModalComponent
     ],
     imports: [
         CommonModule,
         TasksRoutingModule,
         StoreModule.forFeature(TASKS_STATE_NAME, tasksReducer),
         EffectsModule.forFeature([TasksEffects]),
-        SharedFieldsModule,
-        FormsModule
+        FormsModule,
+        SharedTasksComponentsModule
     ],
     providers: [TasksService, ApiService]
 })

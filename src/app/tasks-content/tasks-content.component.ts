@@ -2,6 +2,7 @@ import { Component } from "@angular/core";
 import { Observable } from "rxjs";
 import { TasksService } from "src/services/tasks/tasks.service";
 import { TTaskList } from "./tasks-store";
+import { TasksModalService } from "src/services/tasks/tasks-modal.service";
 
 
 @Component({
@@ -13,7 +14,8 @@ export class TasksContentComponent {
 
 
     constructor(
-        private tasksService: TasksService
+        private tasksService: TasksService,
+        private modal: TasksModalService
     ) { }
 
 
@@ -25,7 +27,7 @@ export class TasksContentComponent {
 
     protected openModal() {
 
-        this.tasksService.openTaskModal();
+        this.modal.openTaskModal();
     };
 
 };

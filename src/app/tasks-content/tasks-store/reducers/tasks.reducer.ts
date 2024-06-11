@@ -1,10 +1,7 @@
 import { Action, createReducer, on } from "@ngrx/store";
 import { resetInitTaskPageState } from "../state/resets/tasks.reset-state";
 import { TTaskPageState } from "../state/tasks.state";
-import {
-    closeTasksModal, loadTasks,
-    loadTasksSuccess, openTasksModal
-} from "../actions/tasks.actions";
+import { loadTasks, loadTasksSuccess } from "../actions/tasks.actions";
 
 
 const _tasksReducer = createReducer(
@@ -17,17 +14,6 @@ const _tasksReducer = createReducer(
         TasksList: tasks,
         isOpenModal: false
     })),
-
-    on(openTasksModal, (state) => ({
-
-        ...state,
-        isOpenModal: true
-    })),
-    on(closeTasksModal, (state) => ({
-
-        ...state,
-        isOpenModal: false
-    }))
 
 );
 
