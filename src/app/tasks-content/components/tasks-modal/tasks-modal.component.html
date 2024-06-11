@@ -10,7 +10,7 @@
             <title-input [value]="titleOfSurname | async" [placeholder]="'Фамилия'"
                 (valueChange)="onSurnameChange($event)"></title-input>
             <div class="modal-footer fix-footer">
-                <button>Сохранить</button>
+                <button (click)="save()">Сохранить</button>
             </div>
         </div>
     </div>

@@ -48,4 +48,13 @@ export class TasksModalComponent {
         this.modal.closeTaskModal();
     };
 
+
+    protected save() {
+
+        this.store.subscribe(x => {
+
+            console.log(x)
+        });
+    };
+
 };
