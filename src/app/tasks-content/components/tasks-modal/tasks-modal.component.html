@@ -5,9 +5,10 @@
             <button (click)="closeModal()">Закрыть окошко</button>
         </div>
         <div class="modal-body">
-            <!-- ///затычка тест -->
-            <title-input [inputTitleData]="modal.titleOfNameStatusInit"></title-input>
-            <!-- /// -->
+            <title-input [value]="titleOfName | async" [placeholder]="'Имя'"
+                (valueChange)="onNameChange($event)"></title-input>
+            <title-input [value]="titleOfSurname | async" [placeholder]="'Фамилия'"
+                (valueChange)="onSurnameChange($event)"></title-input>
             <div class="modal-footer fix-footer">
                 <button>Сохранить</button>
             </div>

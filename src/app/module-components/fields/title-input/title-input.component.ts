@@ -9,7 +9,8 @@ import { TTitleInput } from './type';
 export class TitleInputComponent {
 
 
-    @Input() inputTitleData!: TTitleInput;
+    @Input() placeholder: string = '';
+    @Input() value: unknown = '';
     @Output() valueChange = new EventEmitter<string>();
 
 
@@ -18,6 +19,7 @@ export class TitleInputComponent {
         const input = event.target as HTMLInputElement;
         
         this.valueChange.emit(input.value);
+        this.value = input.value;
     };
 
 };

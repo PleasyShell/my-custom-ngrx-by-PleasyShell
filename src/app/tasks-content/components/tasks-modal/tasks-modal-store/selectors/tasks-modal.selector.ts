@@ -11,3 +11,13 @@ export const selectModalState = createSelector(
     selectTasksState,
     (state: TAddTask) => state.isOpen
 );
+
+export const selectName = createSelector(
+    selectTasksState,
+    (state: TAddTask) => state.Content.Name
+);
+
+export const selectSurname = createSelector(
+    selectTasksState,
+    (state: TAddTask) => state.Content.Surname
+);

@@ -1,7 +1,9 @@
 import { Component } from "@angular/core";
+import { Store } from "@ngrx/store";
 import { Observable } from "rxjs";
 import { TTitleInput } from "src/app/module-components/fields";
 import { TasksModalService } from "src/services/tasks/tasks-modal.service";
+import { updateFieldName, updateFieldSurname } from "./tasks-modal-store";
 
 
 @Component({
@@ -13,19 +15,32 @@ export class TasksModalComponent {
 
 
     constructor(
-        public modal: TasksModalService
+        //--public временно
+        public modal: TasksModalService,
+        private store: Store
     ) {
-
-        this.titleOfNameStatus = modal.titleOfNameStatusInit;
+        this.titleOfName = modal.titleOfNameInit$;
+        this.titleOfSurname = modal.titleOfSurnameInit$;
     };
 
 
-    protected titleOfNameStatus: TTitleInput;
-
+    protected titleOfName: Observable<string>;
+    protected titleOfSurname: Observable<string>;
 
     protected modalState(): Observable<boolean> {
 
         return this.modal.getModalState();
+    };
+
+
+    protected onNameChange(name: string) {
+
+        this.store.dispatch(updateFieldName({ name }))
+    };
+
+    protected onSurnameChange(surname: string) {
+
+        this.store.dispatch(updateFieldSurname({ surname }))
     };
 
 

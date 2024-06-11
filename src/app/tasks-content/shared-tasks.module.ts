@@ -12,7 +12,6 @@ import {
     TASKS_STATE_NAME, tasksReducer,
     TasksEffects
 } from "./tasks-store";
-import { SharedFieldsModule } from "../module-components/fields";
 import { FormsModule } from "@angular/forms";
 import { SharedTasksComponentsModule } from "./components/shared-tasks-components.module";
 
