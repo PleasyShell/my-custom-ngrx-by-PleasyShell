@@ -2,8 +2,8 @@ import { Injectable } from "@angular/core";
 import { Store } from "@ngrx/store";
 import { Observable } from "rxjs";
 import {
-    TTaskState, loadTasks, selectTasks,
-    TTaskList
+    TTaskState, loadTasks,
+    selectTasks, TTaskList
 } from "src/app/tasks-content/tasks-store";
 
 

@@ -15,7 +15,7 @@ export class TasksModalComponent {
 
     constructor(
         private modal: TasksModalService,
-        private store: Store<TAddTask>
+        protected store: Store<TAddTask>
     ) {
         this.titleOfName = modal.titleOfNameInit$;
         this.titleOfSurname = modal.titleOfSurnameInit$;
@@ -25,10 +25,13 @@ export class TasksModalComponent {
     protected titleOfName: Observable<string>;
     protected titleOfSurname: Observable<string>;
 
+    protected test = this.store
+
 
     protected modalState(): Observable<boolean> {
 
         return this.modal.getModalState();
+
     };
 
     protected modalMode(): boolean {

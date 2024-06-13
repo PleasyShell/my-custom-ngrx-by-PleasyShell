@@ -2,10 +2,9 @@ import { Injectable } from "@angular/core";
 import { Store } from "@ngrx/store";
 import { Observable, map } from "rxjs";
 import {
-    TAddTask, selectModalState,
-    openTasksModal, closeTasksModal, selectName,
-    selectSurname, TAddTaskContent, openEditTasksModal,
-    selectModalDataId,
+    TAddTask, selectModalState, openTasksModal,
+    closeTasksModal, selectName, selectSurname,
+    TAddTaskContent, openEditTasksModal, selectModalDataId,
 } from "src/app/tasks-content/components/tasks-modal/tasks-modal-store";
 
 @Injectable()
@@ -19,6 +18,7 @@ export class TasksModalService {
         this.checkModalMode();
 
         this.isOpen$ = this.store.select(selectModalState);
+
         this.titleOfNameInit$ = this.store.select(selectName);
         this.titleOfSurnameInit$ = this.store.select(selectSurname);
     };
@@ -30,11 +30,11 @@ export class TasksModalService {
     public titleOfSurnameInit$: Observable<string>;
 
 
-    protected checkModalMode() {
+    private checkModalMode() {
 
         this.store.select(selectModalDataId).pipe(
             map(id => id !== 0)).subscribe(boolean => {
-                this.isEdit = boolean
+                this.isEdit = boolean;
             });
     };
 
@@ -53,6 +53,7 @@ export class TasksModalService {
     public openTaskModal(item?: TAddTaskContent) {
 
         if (!item) {
+
             this.store.dispatch(openTasksModal());
             return;
         };

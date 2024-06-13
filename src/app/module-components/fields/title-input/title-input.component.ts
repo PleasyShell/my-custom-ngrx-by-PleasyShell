@@ -2,6 +2,7 @@ import {
     Component, EventEmitter,
     Input, Output
 } from '@angular/core';
+import { TTitleInput } from './type';
 
 
 @Component({
@@ -11,9 +12,10 @@ import {
 
 export class TitleInputComponent {
 
-
+    
     @Input() placeholder: string = '';
     @Input() value: unknown = '';
+
     @Output() valueChange = new EventEmitter<string>();
 
 
